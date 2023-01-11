@@ -6,6 +6,20 @@
     --mandyspink: #f2c1bd;
 }
 
+html {
+    height: 100vh;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
 /* 
 ==================================================================
                             Typhography
@@ -18,7 +32,9 @@
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
 }
-
+ p {
+    margin-bottom: 0;
+ }
 /* 
 ==================================================================
                             Navigation_Bar
@@ -124,22 +140,27 @@
 ==================================================================
 */
 
-.main-container {
-    max-width: 1300px;
+.body-container { 
+    max-width: 1500px;
     width: 90%;
     margin: 0 auto;
-    /* margin-top: 5rem; */
+}
+
+.main-container {
+    margin: 6rem auto;
     display: flex;
-    justify-content: space-between;
-    min-height: 100vh;
+    flex-direction: column;
 }
 
 .main-container-forms {
-    margin: auto 0;
+    margin: 0 auto;
+    width: 95%;
 }
 
 .main-container-forms h1 {
-    margin-bottom: 5rem;
+    text-align: center;
+    margin: 2.5rem;
+    font-weight: bolder;
 }
 
 input[type=text],[type=password] {
@@ -165,6 +186,7 @@ input[type=submit] {
     background-color: green;
     color: white;
     font-size: 1rem;
+    transition-duration: 500ms;
 }
 
 input[type=submit]:hover, 
@@ -179,7 +201,12 @@ input[type=submit]:active {
 */
 
 .main-container-images {
-    margin: auto 0;
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* 
@@ -187,15 +214,100 @@ input[type=submit]:active {
                             Carousel 
 ==================================================================
 */
+
 .carousel-item {
-    width:100%;
-    height: 500px;
+    height: 350px;
 }
 
-.carousel-item img{
-    margin: 2rem auto;
-    width:90%;
-    height: 90%;
+.carousel-item img {
+    width: 80%;
+    height: 100% !important;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* 
+==================================================================
+                            Footer
+==================================================================
+*/
+
+footer {
+    color: white;
+    background-color: #FD7B93;
+    padding-bottom: 1rem;
+}
+
+.footer-container { 
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 20rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: 2.5rem;
+}
+
+.location,
+.contact-number,
+.email{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0 0 0;
+}
+
+.content-container {
+    background-color: #ffc4cf;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+
+.content-paragraph {
+    font-size: 1rem;
+    font-weight: 200;
+    width: 60%;
+    padding: 1rem 0 0 0;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    
+.social-media-container  {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0 0 0;
+}
+
+.social-media-container a {
+    padding: 0 2rem 0 2rem;
+}
+
+.copyright p {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: .790rem;
+    font-weight: 200; 
 }
 
 /* 
@@ -204,12 +316,114 @@ input[type=submit]:active {
 ==================================================================
 */
 
-@media (min-width: 750px) {
+
+@media screen and (min-width: 750px) {
+    
+/* 
+==================================================================
+                            Forms
+==================================================================
+*/
+    .main-container {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 3rem auto;
+        height: 100vh;
+    }
+
+    .main-container-forms h1 { 
+        text-align: left;
+    }
+
     .main-container-forms {
         width: 40%;
+        margin: auto 0;
     }
 
     .main-container-images {
         width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+
+    .carousel-item {
+        height: 450px;
+    }
+
+    .carousel-item img {
+        width: 80%;
+        height: 100% !important;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+/* 
+==================================================================
+                            Footer
+==================================================================
+*/
+    footer {
+        color: white;
+        background-color: #FD7B93;
+        padding-bottom: 1rem;
+    }
+    
+    .footer-container { 
+        max-width: 1500px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+
+    .footer-flex {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0 auto;
+        width: 80%;
+        padding-top: 2.5rem;
+    }
+
+    .location,
+    .contact-number,
+    .email {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        text-align: left;
+        padding: 0 0 0 .5rem;
+        width: 100%;
+        border-right: 1px solid #ffc4cf;
+    }
+
+    .content-paragraph {
+        font-size: .8rem;
+        font-weight: 200;
+        width: 75%;
+        padding: 0 0 0 0;
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: column;
+    }
+        
+    .social-media-container  {
+        display: flex;
+        justify-content: center;
+        padding: 0 0 0 0;
+       
+    }
+    
+    .social-media-container a {
+        padding: 0 0 0 2rem;
+    }
+
 }
